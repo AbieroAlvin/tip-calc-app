@@ -15,27 +15,6 @@ const Inputs = ({
   const [billInputError, setBillInputError] = useState(false);
   const [peopleInputError, setPeopleInputError] = useState(false);
 
-  // useEffect(() => {
-  //   const calculateTip = () => {
-  //     let tipAmount = customTip
-  //       ? (billAmount * customTip) / 100
-  //       : (billAmount * tipPercentage) / 100;
-  //     let totalPerPerson = billAmount / numOfPeople + tipAmount / numOfPeople;
-
-  //     setTipAmount(tipAmount.toFixed(2));
-  //     setTotalPerPerson(totalPerPerson.toFixed(2));
-  //   };
-
-  //   calculateTip();
-  // }, [
-  //   billAmount,
-  //   tipPercentage,
-  //   customTip,
-  //   numOfPeople,
-  //   setTipAmount,
-  //   setTotalPerPerson,
-  // ]);
-
   useEffect(() => {
     const calculateTip = () => {
       if (
@@ -82,11 +61,11 @@ const Inputs = ({
           value={billAmount}
           onChange={(e) => setBillAmount(e.target.value)}
           className={`w-full p-2 mb-4 border ${
-            billInputError ? "border-red-500" : "border-green-600"
+            billInputError ? "border-red-400" : "border-green-600"
           } rounded-md bg-gray-200`}
         />
         {billInputError && (
-          <p className="text-[11px] text-red-500">Can't be zero</p>
+          <p className="text-[11px] text-red-400">Can't be zero</p>
         )}
       </div>
       <div className="mb-4">
@@ -121,11 +100,11 @@ const Inputs = ({
           value={numOfPeople}
           onChange={(e) => setNumOfPeople(e.target.value)}
           className={`w-full p-2 mb-4 border ${
-            peopleInputError ? "border-red-500" : "border-green-600"
+            peopleInputError ? "border-red-400" : "border-green-600"
           } rounded-md bg-gray-200`}
         />
         {peopleInputError && (
-          <p className="text-[11px] text-red-500">Can't be Zero</p>
+          <p className="text-[11px] text-red-400">Can't be Zero</p>
         )}
       </div>
     </div>
